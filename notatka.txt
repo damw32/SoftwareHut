@@ -1,0 +1,72 @@
+string.includes('x')
+string.charAt(x)
+string.charCodeAt(x)
+string.split(' ')
+string.trim()
+string.toUpperCase()
+string.toLowerCase()
+string.replace(x,y)
+
+
+Ala ma ${zmienna}
+
+
+Number.isFinite();
+
+let liczba = 1.123456
+liczba.toFixed(2) # 1.12 
+
+Math.floor() - zaokrąglanie
+Math.pow() - potęgowanie
+Math.random() # losowa wartość
+
+let number = 2
+
+let boolean = true/false;
+
+let tablica = [1,2,3,4,5,6,'six',true,false]
+tab.length 
+
+tablica.join() - łączenie tab
+
+const test = function(){} - referencja do funkcji
+function test(){} - funkcja nazwana
+
+function (parametr) {return xyz}
+const funkcja = (parametr)=>{return parametr}
+
+const funkcja2 = (parametr)=> parametr;
+
+let funkcja3 = (parametr)=>(parametr);
+
+funkcja3 =(parapetr)=>({obiekt:parametr});
+
+
+switch(zmienna){
+    case 0:
+    //kod
+    break;
+    case 1:
+    //kod
+    break;
+    default:
+    //kod
+}
+
+const tablica = ['jeden', 'dwa', 'trzy']
+
+for (let index = 0; index < tablica.length; index++){
+    console.log(tablica[index])
+}
+
+for(let index in obiekt){
+    console.log(index);
+    console.log(obiekt[index]);
+}
+
+const string = 'test';
+
+
+for (let znak of string){
+    console.log(znak);
+}
