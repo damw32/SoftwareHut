@@ -1,26 +1,66 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+//import CustomHeader, { addNumber } from './components/CustomHeader';
+import Counter from './components/Counter';
+import CustomHeader from './components/CustomHeader';
+
+const App = () => {
+  //const addedNumber = addNumber(1, 2);
+   const [changedNumber, setChangedNumber ] = React.useState(0);
+
+  const handleNumberChange = (newNumber: number) => {
+    setChangedNumber(newNumber);
+    //console.log(newNumber)
+   // return newNumber;
+  }
+  
+  const liczbaMniejszaOdZera = (liczba: number) =>
+  {
+    if (liczba < 0){
+      return (<div>Liczba jest mniejsza od 0</div>)
+    }
+  }
+  const liczbawiekszaOdZera = (liczba: number) =>
+  {
+    if (liczba > 0){
+      return (<div>Liczba jest wieksza od 0</div>)
+    }
+  }
+  const liczbawiekszaOd10 = (liczba: number) =>
+  {
+    if (liczba > 15)
+      {
+        return (<div>Liczba przekroczona</div>)
+      }
+    if (liczba > 10){
+      return (<div>Liczba jest wieksza od 10</div>)
+    }
+    
+  }
+  const liczbamniejszaOdminus10 = (liczba: number) =>
+  {
+    if (liczba < -10){
+      return (<div>Liczba jest mniejsza od -10</div>)
+    }
+  }
+  
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CustomHeader>        
+        {/* <Counter onNumberChange={(newNumber)=>{ console.log(newNumber) }}/> */}
+        <Counter onNumberChange={handleNumberChange}/>
+        {liczbaMniejszaOdZera(changedNumber)}
+        {liczbawiekszaOdZera(changedNumber)}
+        {liczbawiekszaOd10(changedNumber)}
+        {liczbamniejszaOdminus10(changedNumber)}
+      </CustomHeader>
+      
     </div>
   );
+
 }
 
 export default App;
