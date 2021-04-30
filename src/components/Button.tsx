@@ -6,7 +6,7 @@ interface Button {
     onNumberChange?: () => void;
 }
 
-const Button:React.FC<Button> = ({ charOfButton, onNumberChange }) => {
+const Button: React.FC<Button> = ({ charOfButton, onNumberChange }) => {
 
     return (
         <button onClick={onNumberChange}>{charOfButton}</button>
