@@ -1,25 +1,31 @@
 import React from 'react';
 import './App.css';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import Home from './views/home/Home';
 import Movie from './views/movie/Movie';
 import Page404 from './views/page404/Page404';
 
+
 import './App.css';
+import TodoPanel from './views/todoPanel/TodoPanel';
+import store from './store';
 
 const App = () => {
 
   return (
     <div className="app">
       <BrowserRouter>
-      <Switch>
-        
+      <Provider store={store}>
+      <Switch>       
         <Route path="/movie/:id" component={Movie} />
         <Route path="/" component={Home} exact/>
+        <Route path="/todo" component={TodoPanel}/>
         <Route path="*" component={Page404} />
       </Switch>
+      </Provider>
       </BrowserRouter>
-
+      
       {/* <Home/>
       <Movie/> */}
     </div>
@@ -27,8 +33,6 @@ const App = () => {
 }
 
 export default App;
-
-
 
 
 
